@@ -1,10 +1,10 @@
 
 import java.util.Scanner;
 
-public class Rum {
+public class APP {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        AVLTree<Integer> avlTree = new AVLTree<>();
+        AVLTree<Integer> tree = new AVLTree<>();
 
         while (true) {
             System.out.println("\nMENU:");
@@ -20,23 +20,23 @@ public class Rum {
                 case 1:
                     System.out.print("Valor a ser inserido: ");
                     int valorInserir = scanner.nextInt();
-                    avlTree.insert(valorInserir);
+                    tree.insert(valorInserir);
                     System.out.println("inserido!");
                     break;
                 case 2:
                     System.out.print("Valor a ser removido: ");
                     int valorRemover = scanner.nextInt();
-                    avlTree.RemoveAVLNode(valorRemover);
+                    tree.RemoveAVLNode(valorRemover);
                     System.out.println("Removido!");
                     break;
                 case 3:
                     System.out.println("Árvore-em-ordem:");
-                    avlTree.passeioPorOrdem();
+                    tree.passeioPorOrdem();
                     System.out.println();
                     break;
                 case 4:
                     System.out.println("Árvore-em-nível:");
-                    avlTree.passeioPorNivel();
+                    tree.passeioPorNivel();
                     break;
                 case 5:
                     System.out.println("Exit...");

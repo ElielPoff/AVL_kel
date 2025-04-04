@@ -145,7 +145,7 @@ public class AVLTree<T extends Comparable<T>> {
                     aux = aux.getLeft();
                 }
                 aux = pilha.pop();
-                System.out.println(aux.getInfo());
+                System.out.println(aux.getInfo() + "-" + aux.getFatBal());
                 aux = aux.getRight();
             }
         }
@@ -161,9 +161,9 @@ public class AVLTree<T extends Comparable<T>> {
             AVLNode<T> atual = fila.poll(); // Remove o primeiro nó da fila
             
             // Imprime a informação do nó e seus filhos (ou null se não existirem)
-            System.out.println(atual.getInfo() + 
-                " -> " + (atual.getLeft() != null ? atual.getLeft().getInfo() : "null") + 
-                ", " + (atual.getRight() != null ? atual.getRight().getInfo() : "null"));
+            System.out.println(atual.getInfo() + "-" + atual.getFatBal() + 
+                " -> " + (atual.getLeft() != null ? atual.getLeft().getInfo() + "-" + atual.getLeft().getFatBal() : "null") + 
+                ", " + (atual.getRight() != null ? atual.getRight().getInfo() + "-" + atual.getRight().getFatBal() : "null"));
                 
             // Adiciona os filhos à fila, mesmo que sejam null
             if (atual.getLeft() != null) fila.add(atual.getLeft());
